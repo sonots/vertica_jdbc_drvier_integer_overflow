@@ -1,11 +1,11 @@
 require 'vertica'
 
 connection = Vertica.connect({
-  host: 'xxx.xxx.xxx.xxx',
+  host: 'CHANGEME',
   port: 5433,
-  database: 'vdb',
-  user: 'xxxxxx',
-  password: 'xxxxxx',
+  database: 'CHANGEME',
+  user: 'CHANGEME',
+  password: 'CHANGEME',
 })
 
 connection.query("drop table if exists sandbox.integer_overflow")
