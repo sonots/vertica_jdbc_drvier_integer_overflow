@@ -1,0 +1,45 @@
+2016-05-11 18:33:32.923 +0900 [INFO] (0016:task-0000): Fetched 524,288,000 rows.
+2016-05-11 18:39:39.628 +0900 [INFO] (0016:task-0000): Fetched 1,048,576,000 rows.
+2016-05-11 18:52:22.287 +0900 [INFO] (0016:task-0000): Fetched 2,097,152,000 rows.
+2016-05-11 19:19:44.208 +0900 [INFO] (0016:task-0000): Fetched 4,194,304,000 rows.
+2016-05-11 19:21:03.375 +0900 [INFO] (0001:transaction): {done:  1 / 1, running: 0}
+org.embulk.exec.PartialExecutionException: java.lang.RuntimeException: java.sql.SQLException: [Vertica][JDBC](10180) Error fetching data, cursor positioned before first row.
+        at org.embulk.exec.BulkLoader$LoaderState.buildPartialExecuteException(org/embulk/exec/BulkLoader.java:363)
+        at org.embulk.exec.BulkLoader.doRun(org/embulk/exec/BulkLoader.java:572)
+        at org.embulk.exec.BulkLoader.access$000(org/embulk/exec/BulkLoader.java:33)
+        at org.embulk.exec.BulkLoader$1.run(org/embulk/exec/BulkLoader.java:374)
+        at org.embulk.exec.BulkLoader$1.run(org/embulk/exec/BulkLoader.java:370)
+        at org.embulk.spi.Exec.doWith(org/embulk/spi/Exec.java:25)
+        at org.embulk.exec.BulkLoader.run(org/embulk/exec/BulkLoader.java:370)
+        at org.embulk.EmbulkEmbed.run(org/embulk/EmbulkEmbed.java:180)
+        at java.lang.reflect.Method.invoke(java/lang/reflect/Method.java:497)
+        at RUBY.run(uri:classloader:/embulk/runner.rb:84)
+        at RUBY.run(uri:classloader:/embulk/command/embulk_run.rb:306)
+        at RUBY.<top>(uri:classloader:/embulk/command/embulk_main.rb:2)
+        at org.jruby.RubyKernel.require(org/jruby/RubyKernel.java:937)
+        at home.game.src.github_dot_dena_dot_jp.seo_minus_naotoshi.vertica_jdbc_drvier_integer_overflow.reproduce.embulk.embulk.command.embulk_bundle.<top>(file:/home/game/src/github.dena.jp/seo-naotoshi/vertica_jdbc_drvier_integer_overflow/reproduce/embulk!/embulk/command/embulk_bundle.rb:30)
+        at java.lang.invoke.MethodHandle.invokeWithArguments(java/lang/invoke/MethodHandle.java:625)
+        at org.embulk.cli.Main.main(org/embulk/cli/Main.java:23)
+Caused by: java.lang.RuntimeException: java.sql.SQLException: [Vertica][JDBC](10180) Error fetching data, cursor positioned before first row.
+        at com.google.common.base.Throwables.propagate(Throwables.java:160)
+        at org.embulk.input.jdbc.AbstractJdbcInputPlugin.run(AbstractJdbcInputPlugin.java:277)
+        at org.embulk.exec.LocalExecutorPlugin$ScatterExecutor.runInputTask(LocalExecutorPlugin.java:294)
+        at org.embulk.exec.LocalExecutorPlugin$ScatterExecutor.access$000(LocalExecutorPlugin.java:212)
+        at org.embulk.exec.LocalExecutorPlugin$ScatterExecutor$1.call(LocalExecutorPlugin.java:257)
+        at org.embulk.exec.LocalExecutorPlugin$ScatterExecutor$1.call(LocalExecutorPlugin.java:253)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: java.sql.SQLException: [Vertica][JDBC](10180) Error fetching data, cursor positioned before first row.
+        at com.vertica.exceptions.ExceptionConverter.toSQLException(Unknown Source)
+        at com.vertica.jdbc.common.SForwardResultSet.checkIfValidRowNumber(Unknown Source)
+        at com.vertica.jdbc.common.SForwardResultSet.getData(Unknown Source)
+        at com.vertica.jdbc.common.SForwardResultSet.getLong(Unknown Source)
+        at org.embulk.input.jdbc.getter.LongColumnGetter.fetch(LongColumnGetter.java:23)
+        at org.embulk.input.jdbc.getter.AbstractColumnGetter.getAndSet(AbstractColumnGetter.java:25)
+        at org.embulk.input.jdbc.AbstractJdbcInputPlugin.fetch(AbstractJdbcInputPlugin.java:336)
+        at org.embulk.input.jdbc.AbstractJdbcInputPlugin.run(AbstractJdbcInputPlugin.java:263)
+        ... 8 more
+
+Error: java.lang.RuntimeException: java.sql.SQLException: [Vertica][JDBC](10180) Error fetching data, cursor positioned before first row.

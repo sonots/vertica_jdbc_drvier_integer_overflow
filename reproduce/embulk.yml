@@ -1,0 +1,18 @@
+in:
+  type: vertica
+  host: 'xxx.xxx.xxx.xxx'
+  port: 5433
+  database: 'vdb'
+  user: 'xxxxxx'
+  password: 'xxxxxx'
+  schema: sandbox
+  table: integer_overflow
+  select: "id"
+out:
+  type: "null"
+# out:
+#   type: file
+#   path_prefix: tmp.
+#   file_ext: txt
+#   formatter:
+#     type: single_value

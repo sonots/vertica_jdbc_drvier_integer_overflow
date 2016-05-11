@@ -1,0 +1,15 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    embulk-formatter-single_value (0.2.0)
+    embulk-input-vertica (0.1.1)
+
+PLATFORMS
+  java
+
+DEPENDENCIES
+  embulk-formatter-single_value
+  embulk-input-vertica
+
+BUNDLED WITH
+   1.10.6
