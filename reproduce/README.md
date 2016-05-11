@@ -20,3 +20,5 @@ Modify embulk.yml to configure vertica host, port, user, password. Then,
 ```
 ./embulk run -b . embulk.yml
 ```
+
+wait until num of records overflows (it took about 40 mins on my environment)
