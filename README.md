@@ -1,6 +1,6 @@
 # PROBLEM
 
-I got following error with vertica jdbc driver while reading more than 4.2 billion records.
+I got following error with vertica jdbc driver while reading more than about 4.3 billion records.
 
 ```
 java.sql.SQLException: [Vertica][JDBC](10180) Error fetching data, cursor positioned before first row.
