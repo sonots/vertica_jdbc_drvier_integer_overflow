@@ -17,4 +17,6 @@ Modify create_table.rb to configure vertica host, port, user, password. Then,
 bundle exec ruby create_table.rb
 ```
 
-Wait until finishes (it took 4 hours on my environment)
+Wait until finishes (it took 4 hours on my environment).
+
+This just creates a table whose number of records are more than 2^32.
