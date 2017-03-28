@@ -17,7 +17,7 @@ org.embulk.exec.PartialExecutionException: java.lang.RuntimeException: java.sql.
         at RUBY.run(uri:classloader:/embulk/command/embulk_run.rb:306)
         at RUBY.<top>(uri:classloader:/embulk/command/embulk_main.rb:2)
         at org.jruby.RubyKernel.require(org/jruby/RubyKernel.java:937)
-        at home.game.src.github_dot_dena_dot_jp.seo_minus_naotoshi.vertica_jdbc_drvier_integer_overflow.reproduce.embulk.embulk.command.embulk_bundle.<top>(file:/home/game/src/github.dena.jp/seo-naotoshi/vertica_jdbc_drvier_integer_overflow/reproduce/embulk!/embulk/command/embulk_bundle.rb:30)
+        at home.game.src.github_dot_dena_dot_jp.seo_minus_naotoshi.vertica_jdbc_drvier_integer_overflow.reproduce.embulk.embulk.command.embulk_bundle.<top>(file:vertica_jdbc_drvier_integer_overflow/reproduce/embulk!/embulk/command/embulk_bundle.rb:30)
         at java.lang.invoke.MethodHandle.invokeWithArguments(java/lang/invoke/MethodHandle.java:625)
         at org.embulk.cli.Main.main(org/embulk/cli/Main.java:23)
 Caused by: java.lang.RuntimeException: java.sql.SQLException: [Vertica][JDBC](10180) Error fetching data, cursor positioned before first row.
